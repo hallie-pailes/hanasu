@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Question, Quiz
+from .models import Question
 import random
 
 
@@ -357,13 +357,6 @@ def numbers_quiz(request, question_number=1):
         incorrect_answers = request.session.get('incorrect_answers', [])
         request.session.flush()  # Clear session data after quiz completion
 
-
-        Quiz.objects.create( #THIS WAS ME
-            name="Numbers Quiz",
-            total_correct = score,
-            total_questions=total_questions,
-        )
-
         return render(request, 'hanasu/numbers_result.html', {
             'score': score,
             'total_questions': total_questions,
@@ -398,57 +391,3 @@ def numbers_quiz(request, question_number=1):
 	'active_page': 'lesson',
     })
 
-def my_view(request):
-    quizzes = Quiz.objects.all()  # Get all objects from the model
-    return render(request, 'hanasu/home.html', {'quiz': quizzes})
-
-Quiz.objects.create(
-    name="Numbers Quiz",
-    total_correct = 10,
-    total_questions=11,
-)
-
-def progress_dashboard(request):
-    # Get quiz progress from session (initialize if it doesn't exist)
-    quiz_progress = request.session.get('quiz_progress', {})
-    
-    # Calculate the overall progress for each quiz
-    quizzes = ['numbers_quiz', 'other_quiz1', 'other_quiz2']  # Add all your quiz names here
-    progress_data = []
-
-    for quiz in quizzes:
-        progress = quiz_progress.get(quiz, {})
-        score = progress.get('score', 0)
-        total_questions = progress.get('total_questions', 0)
-        completed = progress.get('completed', False)
-        completion_percentage = (score / total_questions) * 100 if total_questions else 0
-        progress_data.append({
-            'quiz_name': quiz,
-            'score': score,
-            'total_questions': total_questions,
-            'completed': completed,
-            'completion_percentage': completion_percentage
-        })
-
-    return render(request, 'hanasu/progress_dashboard.html', {
-        'progress_data': progress_data
-    })
-
-def home(request):
-    # Get quiz progress data
-    progress_data = []
-
-    # Check if there's any quiz progress in the session
-    if 'quiz_progress' in request.session:
-        quiz_progress = request.session['quiz_progress']
-
-        for quiz_name, progress in quiz_progress.items():
-            progress_data.append({
-                'quiz_name': quiz_name,
-                'score': progress.get('score', 0),
-                'total_questions': progress.get('total_questions', 0),
-                'completed': progress.get('completed', False),
-                'completion_percentage': (progress.get('score', 0) / progress.get('total_questions', 1)) * 100 if progress.get('total_questions') else 0,
-            })
-
-    return render(request, 'hanasu/home.html', {'progress_data': progress_data})

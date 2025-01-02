@@ -1,5 +1,4 @@
 # hanasu/urls.py
-
 from django.urls import path
 from hanasu import views
 

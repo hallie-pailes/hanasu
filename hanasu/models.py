@@ -14,10 +14,3 @@ class Answer(models.Model):
     def __str__(self):
         return self.text
 
-class Quiz(models.Model):
-    name = models.CharField(max_length=255)
-    total_questions = models.IntegerField() 
-    total_correct = models.IntegerField()
-
-    def __str__(self):
-        return self.name
