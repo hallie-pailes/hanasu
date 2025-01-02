@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <h1>Hiragana</h1>
+    <h2>ひらがな</h2>
+{% endblock %}
+
+{% block content %}
+
+    <!-- Page Content -->
+    <br>
+    <h2>Hiragana</h2>
+
+    <p>
+      Here you can study Hiragana!
+    </p>
+
+<h1>Quiz Completed</h1>
+<p>Your Score: {{ score }} out of {{ total_questions }}</p>
+<a href="{% url 'hiragana_quiz' %}">Retry Quiz</a>
+{% endblock %}

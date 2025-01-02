@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <h1>Katakana</h1>
+    <h2>カタカナ</h2>
+{% endblock %}
+
+{% block content %}
+    <!-- Page Content -->
+    <br>
+    <h2>Katakana Quiz</h2>
+
+    <p>
+      Here you can study Katakana!
+    </p>
+
+<form method="post">
+    {% csrf_token %}
+    <div class="question-container">
+        <h2>Question {{ question_number }}:</h2>
+        <p class="question-text">{{ question.question_text }}</p>
+
+        {% if error_message %}
+            <p style="color: red;">{{ error_message }}</p>
+        {% endif %}
+        
+        <div class="answer-container">
+            <label for="user_answer" class="answer-label">Your Answer:</label>
+            <input type="text" name="user_answer" id="user_answer" required class="answer-input">
+		<button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+   
+</form>
+<script>
+    // Automatically focus on the input field when the page loads
+    document.getElementById('user_answer').focus();
+</script>
+
+    <script>
+        // Save the scroll position just before the form is submitted
+        window.addEventListener('beforeunload', function() {
+            sessionStorage.setItem('scrollPosition', window.scrollY); // Store scroll position
+        });
+
+        // Restore the scroll position immediately after the page reloads
+        window.addEventListener('load', function() {
+            const storedPosition = sessionStorage.getItem('scrollPosition');
+            if (storedPosition) {
+                // Directly jump to the previous scroll position
+                window.scrollTo(0, parseInt(storedPosition));
+            }
+        });
+    </script>
+  {% endblock %}

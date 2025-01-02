@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+
+
+<h1>Quiz Completed</h1>
+<p>Your Score: {{ score }} out of {{ total_questions }}</p>
+<a href="{% url 'hiragana_quiz' %}">Retry Quiz</a>
+

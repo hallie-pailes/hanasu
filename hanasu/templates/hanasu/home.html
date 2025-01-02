@@ -1,0 +1,86 @@
+
+{% extends "base.html" %}
+
+{% block title %}
+    <h1>Hanasu</h1>
+    <h2>話す</h2>
+{% endblock %}
+
+{% block content %}
+    <!-- Page Content -->
+	<br>
+    <h2>Hanasu - A Japanese learning and study resource</h2>
+
+    <p>
+      Welcome to Hanasu, a Japanese study resource! Here you can learn and study Hiragana, Katakana, and go over lessons and do activities to help you learn Japanese. The lessons and activities will be based around the style and pacing of the Genki: An Integrated Course in Elementary Japanese textbooks (2nd Edition).
+<br>
+<br>
+      There are lesson sections that contain quizzes over the material for that particular lesson, along with hiragana and katakana sections that have both charts and quizzes for each.
+<br>
+<br>
+<!-- Hiragana and Katakana info -->
+  <div class="d-grid gap-5 mx-auto d-md-flex justify-content-center">
+  	<button class="btn btn-primary-home col-4  non-clickable" type="button" style="font-size: 2rem; margin-right: 60px; ">Hiragana</button> <!-- these are "buttons" but they are not clickable and used as titles-->
+  	<button class="btn btn-primary-home col-4 non-clickable" type="button" style="font-size: 2rem;  ">Katakana</button>
+   </div>
+ <div class="home-containers-wrapper">
+  <div class="home-containers">
+	<p>
+	<a style="font-size: 1.5rem;" href="{% url 'hiragana' %}">Hiragana Chart </a> <br>
+        - Chart containing all hiragana and their sounds <br>
+	<a style="font-size: 1.5rem;" href="{% url 'hiragana_quiz' %}">Hiragana Quiz </a> <br>
+        - Quiz over all hiragana <br>
+	- You will be given the hiragana and need to input it's correct sound!
+	<p>
+   </div>
+  <div class="home-containers">
+	<p>
+	<a style="font-size: 1.5rem;" href="{% url 'katakana' %}">Katakana Chart </a> <br>
+        - Chart containing all katakana and their sounds <br>
+	<a style="font-size: 1.5rem;" href="{% url 'katakana_quiz' %}">Katakana Quiz </a> <br>
+        - Quiz over all katakana <br>
+	- You will be given the katakana and need to input it's correct sound!
+	<p>
+   </div>
+ </div>
+<br>
+
+
+<!-- Lessons info -->
+  <div class="d-grid gap-5 mx-auto d-md-flex justify-content-center">
+  	<a class="btn btn-primary col-4 " type="button" style="font-size: 2rem; margin-right: 60px; " href="{% url 'lesson0' %}">Lesson 0</a>
+  	<a class="btn btn-primary col-4" type="button" style="font-size: 2rem;" href="{% url 'lesson1' %}">Lesson 1</a>
+     	</div>
+ </div>
+ <div class="home-containers-wrapper">
+  <div class="home-containers">
+	<p>
+	<a style="font-size: 1.5rem;" href="{% url 'numbers_quiz' %}">Numbers Quiz: 0-10</a> <br>
+        - Quiz covering numbers 0-10 <br>
+	- You will be given the number hiragana and need to input the correct number translation! <br>
+	<a style="font-size: 1.5rem;" href="{% url 'greetings_quiz' %}">Grettings Quiz </a> <br>
+        - Quiz covering basic greetings in japanese <br>
+	- You will be asked how you say a certain greeting, and then you must choose the correct answer (in hiragana)!
+	<p>
+   </div>
+  <div class="home-containers">
+	<p>
+	<p>
+   </div>
+ </div>
+<br>
+
+<h2>Quiz Results</h2>
+
+{% for progress in progress_data %}
+    <div class="quiz-progress">
+        <h3>{{ progress.quiz_name }}</h3>
+        <p>Score: {{ progress.score }} / {{ progress.total_questions }}</p>
+        <p>Completion: {{ progress.completion_percentage|floatformat:2 }}%</p> <!-- Optional: to format to two decimal places -->
+        <p>Status: {% if progress.completed %} Completed {% else %} In Progress {% endif %}</p>
+    </div>
+{% empty %}
+    <p>No progress data available.</p>  <!-- Display this if there's no progress data -->
+{% endfor %}
+
+{% endblock %}

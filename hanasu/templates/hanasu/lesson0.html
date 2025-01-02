@@ -1,0 +1,562 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <h1>Hanasu</h1>
+    <h2>話す</h2>
+{% endblock %}
+
+{% block content %}
+    <br>
+    <h2>Lesson 0</h2>
+
+    <p>
+      This lesson covers basic greetings and numbers 0-100.<br>
+	The quizzes linked below cover numbers 0-10 and greetings, and the collapsable charts have the numbers 0-100 and the greetings listed to study!
+<br>
+<br>
+    <h3 style="font-size: 2rem; text-align: center;">Quizzes</h3> <br>
+ <div class="d-grid gap-5 mx-auto d-md-flex justify-content-center">
+      <a type="button" class="btn btn-primary btn-lg" style=" margin-right: 50px; " href="{% url 'numbers_quiz' %}">Numbers Quiz: 0-10</a>
+      <a type="button" class="btn btn-primary btn-lg"  href="{% url 'greetings_quiz' %}">Greetings Quiz</a>
+</div>
+<br>
+<br>
+
+    <h3 style="font-size: 2rem; text-align: center;">Charts</h3> <br>
+
+<div class="accordion" id="accordionPanelsStayOpenExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+        Numbers 0-100
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+      <div class="accordion-body">
+<br>
+        <table class="table custom-table table-striped table-bordered" style="width: 90%; margin: 0 auto; border-color: black;">
+    <colgroup>
+        <col style="width: 10%;">
+        <col style="width: 20%;">
+        <col style="width: 10%;">
+        <col style="width: 30%;">
+        <col style="width: 10%;">
+        <col style="width: 20%;">
+    </colgroup>
+  <tbody>
+    <tr>
+      <td class="text-center">
+	0
+	<br>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	ゼロ/れい
+	<br>
+	<small>zero/ree</small>
+      </td>
+      <td class="text-center">
+	10
+	<br>
+            </td>
+      <td class="text-center">
+	じゅう
+	<br>
+	<small>juu</small>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	20
+	<br>
+      </td>
+      <td class="text-center">
+	にじゅう
+	<br>
+	<small>nijuu</small>
+            </td>
+    </tr>
+    <tr>
+      <td class="text-center">
+	1
+	<br>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	いち
+	<br>
+	<small>ichi</small>
+      </td>
+      <td class="text-center">
+	11
+	<br>
+            </td>
+      <td class="text-center">
+	じゅういち
+	<br>
+	<small>juuichi</small>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	30
+	<br>
+      </td>
+      <td class="text-center">
+	さんじゅう
+	<br>
+	<small>sanjuu</small>
+            </td>
+    </tr>
+    <tr>
+      <td class="text-center">
+	2
+	<br>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	に
+	<br>
+	<small>ni</small>
+      </td>
+      <td class="text-center">
+	12
+	<br>
+            </td>
+      <td class="text-center">
+	じゅうに
+	<br>
+	<small>juuni</small>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	40
+	<br>
+      </td>
+      <td class="text-center">
+	よんじゅう
+	<br>
+	<small>yonjuu</small>
+            </td>
+    </tr>
+    <tr>
+      <td class="text-center">
+	3
+	<br>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	さん
+	<br>
+	<small>san</small>
+      </td>
+      <td class="text-center">
+	13
+	<br>
+            </td>
+      <td class="text-center">
+	じゅうさん
+	<br>
+	<small>juusan</small>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	50
+	<br>
+      </td>
+      <td class="text-center">
+	ごじゅう
+	<br>
+	<small>gojuu</small>
+            </td>
+    </tr>
+    <tr>
+      <td class="text-center">
+	4
+	<br>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	よん/し/(よ)
+	<br>
+	<small>yon/shi/(yo)</small>
+      </td>
+      <td class="text-center">
+	14
+	<br>
+            </td>
+      <td class="text-center">
+	じゅうよん/じゅうし
+	<br>
+	<small>juuyon/juushi</small>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	60
+	<br>
+      </td>
+      <td class="text-center">
+	ろくじゅう
+	<br>
+	<small>rokujuu</small>
+            </td>
+    </tr>
+    <tr>
+      <td class="text-center">
+	5
+	<br>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	ご
+	<br>
+	<small>go</small>
+      </td>
+      <td class="text-center">
+	15
+	<br>
+            </td>
+      <td class="text-center">
+	じゅうご
+	<br>
+	<small>juugo</small>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	70
+	<br>
+      </td>
+      <td class="text-center">
+	ななじゅう
+	<br>
+	<small>nanajuu</small>
+            </td>
+    </tr>
+    <tr>
+      <td class="text-center">
+	6
+	<br>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	ろく
+	<br>
+	<small>roku</small>
+      </td>
+      <td class="text-center">
+	16
+	<br>
+            </td>
+      <td class="text-center">
+	じゅうろく
+	<br>
+	<small>juuroku</small>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	80
+	<br>
+      </td>
+      <td class="text-center">
+	はちじゅう
+	<br>
+	<small>hachijuu</small>
+            </td>
+    </tr>
+    <tr>
+      <td class="text-center">
+	7
+	<br>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	なな/しち
+	<br>
+	<small>nana/shichi</small>
+      </td>
+      <td class="text-center">
+	17
+	<br>
+            </td>
+      <td class="text-center">
+	じゅうなな/じゅうしち
+	<br>
+	<small>juunana/juushichi</small>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	90
+	<br>
+      </td>
+      <td class="text-center">
+	きゅうじゅう
+	<br>
+	<small>kyuujuu</small>
+            </td>
+    </tr>
+    <tr>
+      <td class="text-center">
+	8
+	<br>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	はち
+	<br>
+	<small>hachi</small>
+      </td>
+      <td class="text-center">
+	18
+	<br>
+            </td>
+      <td class="text-center">
+	じゅうはち
+	<br>
+	<small>juuhachi</small>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	100
+	<br>
+      </td>
+      <td class="text-center">
+	ひゃく
+	<br>
+	<small>hyaku</small>
+            </td>
+    </tr>
+    <tr>
+      <td class="text-center">
+	9
+	<br>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	きゅう
+	<br>
+	<small>kyuu/ku</small>
+      </td>
+      <td class="text-center">
+	19
+	<br>
+            </td>
+      <td class="text-center">
+	じゅうきゅう/じゅうく
+	<br>
+	<small>juukyuu/juuku</small>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	<br>
+      </td>
+      <td class="text-center">
+            </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
+        Greetings
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show">
+      <div class="accordion-body">
+<br>
+        <table class="table custom-table table-striped table-bordered" style="width: 90%; margin: 0 auto; border-color: black;">
+    <colgroup>
+        <col style="width: 30%;">
+        <col style="width: 20%;">
+        <col style="width: 30%;">
+        <col style="width: 20%;">
+    </colgroup>
+  <tbody>
+    <tr>
+      <td class="text-center">
+	おはよう
+	<br>
+	<small>Ohayoo</small>
+      </td>
+      <td class="text-center">
+	Good morning
+	<br>
+            </td>
+      <td class="text-center">
+	おはよう　ございます
+	<br>
+	<small>Ohayoo gozaimasu</small>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	Good morning (Polite)
+	<br>
+      </td>
+     </tr>
+    <tr>
+      <td class="text-center">
+	こんにちは
+	<br>
+	<small>Konnichiwa</small>
+      </td>
+      <td class="text-center">
+	Good afternoon
+	<br>
+            </td>
+      <td class="text-center">
+	こんばんは
+	<br>
+	<small>Konbanwa</small>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	Good evening
+	<br>
+      </td>
+     </tr>
+    <tr>
+      <td class="text-center">
+	さようなら
+	<br>
+	<small>Sayoonara</small>
+      </td>
+      <td class="text-center">
+	Good-bye
+	<br>
+            </td>
+      <td class="text-center">
+	おやすみ（なさい）
+	<br>
+	<small>Oyasumi (nasai)</small>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	Good night
+	<br>
+      </td>
+     </tr>
+    <tr>
+      <td class="text-center">
+	ありがとう
+	<br>
+	<small>Arigatoo</small>
+      </td>
+      <td class="text-center">
+	Thank you
+	<br>
+            </td>
+      <td class="text-center">
+	ありがとう　ございます
+	<br>
+	<small>Arigatoo gozaimasu</small>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	Thank you (Polite)
+	<br>
+      </td>
+     </tr>
+    <tr>
+      <td class="text-center">
+	すみません
+	<br>
+	<small>Sumimasen</small>
+      </td>
+      <td class="text-center">
+	Excuse me/I'm sorry
+	<br>
+            </td>
+      <td class="text-center">
+	いいえ
+	<br>
+	<small>Iie</small>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	No/Not at all
+	<br>
+      </td>
+     </tr>
+    <tr>
+      <td class="text-center">
+	いってきます
+	<br>
+	<small>Itte kimasu</small>
+      </td>
+      <td class="text-center">
+	I'll go and come back
+	<br>
+            </td>
+      <td class="text-center">
+	いってらっしゃい
+	<br>
+	<small>Itterasshai</small>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	Please go and come back
+	<br>
+      </td>
+     </tr>
+    <tr>
+      <td class="text-center">
+	ただいま
+	<br>
+	<small>Tadaima</small>
+      </td>
+      <td class="text-center">
+	I'm home
+	<br>
+            </td>
+      <td class="text-center">
+	おかえり（なさい）
+	<br>
+	<small>Okaeri (nasai)</small>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	Welcome home
+	<br>
+      </td>
+     </tr>
+    <tr>
+      <td class="text-center">
+	いただきます
+	<br>
+	<small>Itadakimasu</small>
+      </td>
+      <td class="text-center">
+	Thank you for the meal. (before eating)
+	<br>
+            </td>
+      <td class="text-center">
+	ごちそうさま（でした）
+	<br>
+	<small>Gochisoosama (deshita)</small>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	Thank you for the meal. (after eating)
+	<br>
+      </td>
+     </tr>
+    <tr>
+      <td class="text-center">
+	はじめまして
+	<br>
+	<small>Hajimemashite</small>
+      </td>
+      <td class="text-center">
+	How do you do?
+	<br>
+            </td>
+      <td class="text-center">
+	～です
+	<br>
+	<small>...desu</small>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	I am...
+	<br>
+      </td>
+     </tr>
+    <tr>
+      <td class="text-center">
+	よろしく　おねがいします
+	<br>
+	<small>Yoroshiku onegai shimasu</small>
+      </td>
+      <td class="text-center">
+	Nice to meet you
+	<br>
+            </td>
+      <td class="text-center">
+	<br>
+	<small></small>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	<br>
+      </td>
+     </tr>
+     </tbody>
+</table>
+<br>
+      </div>
+    </div>
+  </div>
+</div>
+    </p>
+{% endblock %}

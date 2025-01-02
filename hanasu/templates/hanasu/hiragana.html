@@ -1,0 +1,352 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <h1>Hiragana</h1>
+    <h2>ひらがな</h2>
+{% endblock %}
+
+{% block content %}
+  <!-- Page Content -->
+    <br>
+    <h2>Hiragana</h2>
+
+    <p>
+      Here you can learn Hiragana!
+    </p>
+
+    <p>
+      What is Hiragana? <br> <!-- br breaks to a new line -->
+	<ul> <!-- creates an unordered list -->
+          <li> In Japanese, there are 3 kinds of characters: Hiragana, Katakana, and Kanji. Both Hiragana and Katakana represent different sounds, but are used differently. </li>
+	  <li> Hiragana is used for conjugation endings, function words, and words that are native to Japanese. </li>
+    </p>
+
+<!-- Hiragana Table -->
+<style>
+  .custom-table {
+    background-color: #f0f8ff; /* Light blue background */
+    color: #333; /* Dark text color */
+  }
+
+  .custom-table td {
+    background-color: #ffe6f3; /* Hot pink background for table headers */
+    font-size: 1.6rem;
+  }
+
+  .custom-table tbody td:hover {
+    background-color: #ffcce6; /* Light pink background on hover */
+  }
+  .table {
+    border: 2px solid #333; /* Darker border for table */
+  }
+
+  .table th, .table td {
+    border: 1px solid #333; /* Darker border for table cells */
+  }
+</style>
+
+
+<table class="table custom-table table-striped table-bordered">
+  <tbody>
+    <tr>
+      <td class="text-center">
+	あ
+	<br>
+	<small>a</small>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	い
+	<br>
+	<small>i</small>
+      </td>
+      <td class="text-center">
+	う
+	<br>
+	<small>u</small>
+            </td>
+      <td class="text-center">
+	え
+	<br>
+	<small>e</small>
+            </td>
+      <td class="text-center">
+	お
+	<br>
+	<small>o</small>
+             </td>
+    </tr>
+    <tr>
+      <td class="text-center">
+	か
+	<br>
+	<small>ka</small>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	き
+	<br>
+	<small>ki</small>
+      </td>
+      <td class="text-center">
+	く
+	<br>
+	<small>ku</small>
+            </td>
+      <td class="text-center">
+	け
+	<br>
+	<small>ke</small>
+            </td>
+      <td class="text-center">
+	こ
+	<br>
+	<small>ko</small>
+             </td>
+    </tr>
+　　<tr>
+      <td class="text-center">
+	さ
+	<br>
+	<small>sa</small>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	し
+	<br>
+	<small>shi</small>
+      </td>
+      <td class="text-center">
+	す
+	<br>
+	<small>su</small>
+            </td>
+      <td class="text-center">
+	せ
+	<br>
+	<small>se</small>
+            </td>
+      <td class="text-center">
+	そ
+	<br>
+	<small>so</small>
+             </td>
+    </tr>
+    <tr>
+      <td class="text-center">
+	た
+	<br>
+	<small>ta</small>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	ち
+	<br>
+	<small>chi</small>
+      </td>
+      <td class="text-center">
+	つ
+	<br>
+	<small>tsu</small>
+            </td>
+      <td class="text-center">
+	て
+	<br>
+	<small>te</small>
+            </td>
+      <td class="text-center">
+	と
+	<br>
+	<small>to</small>
+             </td>
+    </tr>
+    <tr>
+      <td class="text-center">
+	な
+	<br>
+	<small>na</small>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	に
+	<br>
+	<small>ni</small>
+      </td>
+      <td class="text-center">
+	ぬ
+	<br>
+	<small>nu</small>
+            </td>
+      <td class="text-center">
+	ね
+	<br>
+	<small>ne</small>
+            </td>
+      <td class="text-center">
+	の
+	<br>
+	<small>no</small>
+             </td>
+    </tr>
+    <tr>
+      <td class="text-center">
+	は
+	<br>
+	<small>ha</small>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	ひ
+	<br>
+	<small>hi</small>
+      </td>
+      <td class="text-center">
+	ふ
+	<br>
+	<small>fu</small>
+            </td>
+      <td class="text-center">
+	へ
+	<br>
+	<small>he</small>
+            </td>
+      <td class="text-center">
+	ほ
+	<br>
+	<small>ho</small>
+             </td>
+    </tr>
+    <tr>
+      <td class="text-center">
+	ま
+	<br>
+	<small>ma</small>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	み
+	<br>
+	<small>mi</small>
+      </td>
+      <td class="text-center">
+	む
+	<br>
+	<small>mu</small>
+            </td>
+      <td class="text-center">
+	め
+	<br>
+	<small>me</small>
+            </td>
+      <td class="text-center">
+	も
+	<br>
+	<small>mo</small>
+             </td>
+    </tr>
+    <tr>
+      <td class="text-center">
+	や
+	<br>
+	<small>ya</small>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+
+	<br>
+	<small></small>
+      </td>
+      <td class="text-center">
+	ゆ
+	<br>
+	<small>yu</small>
+            </td>
+      <td class="text-center">
+	
+	<br>
+	<small></small>
+            </td>
+      <td class="text-center">
+	よ
+	<br>
+	<small>yo</small>
+             </td>
+    </tr>
+    <tr>
+      <td class="text-center">
+	ら
+	<br>
+	<small>ra</small>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	り
+	<br>
+	<small>ri</small>
+      </td>
+      <td class="text-center">
+	る
+	<br>
+	<small>ru</small>
+            </td>
+      <td class="text-center">
+	れ
+	<br>
+	<small>re</small>
+            </td>
+      <td class="text-center">
+	ろ
+	<br>
+	<small>ro</small>
+             </td>
+    </tr>
+    <tr>
+      <td class="text-center">
+	わ
+	<br>
+	<small>wa</small>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	
+	<br>
+	<small></small>
+      </td>
+      <td class="text-center">
+	
+	<br>
+	<small></small>
+            </td>
+      <td class="text-center">
+	
+	<br>
+	<small></small>
+            </td>
+      <td class="text-center">
+	を
+	<br>
+	<small>wo</small>
+             </td>
+    </tr>
+    <tr>
+      <td class="text-center">
+	ん
+	<br>
+	<small>n</small>
+      </td> <!-- these are rows -->
+      <td class="text-center">
+	
+	<br>
+	<small></small>
+      </td>
+      <td class="text-center">
+	
+	<br>
+	<small></small>
+            </td>
+      <td class="text-center">
+	
+	<br>
+	<small></small>
+            </td>
+      <td class="text-center">
+	
+	<br>
+	<small></small>
+             </td>
+    </tr>
+  </tbody>
+</table>
+
+{% endblock %}
+

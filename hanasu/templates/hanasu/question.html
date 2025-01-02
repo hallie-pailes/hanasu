@@ -1,0 +1,167 @@
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+
+<!-- hanasu/templates/hanasu/hiragana.html -->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Hanasu</title>
+  <link rel="stylesheet" href="{% static 'hanasu/styles.css' %}" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux&display=swap" rel="stylesheet">
+  <style>
+    /* Ensure no margin or padding on the body and html */
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Remove any padding or margin on the navbar */
+    .navbar {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Remove space above the header */
+    .header {
+      margin-top: 0; /* Remove any margin above the header */
+      padding-top: 0; /* Remove padding above the header */
+    }
+
+    /* Ensure navbar stays on top */
+    .navbar {
+      z-index: 1000;
+    }
+
+    /*Adds a nice transition effect for the dropdown */
+    .dropdown-menu {
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    /* Custom styles for the dropdown items */
+    .dropdown-item:active, .dropdown-item:focus {
+      background-color: #e83e8c; /* Pink background when clicked */
+      color: white; /* White text color */
+    }
+
+    .dropdown-item:hover {
+      background-color: #f8c8d6; /* Light pink background on hover */
+      color: #333; /* Dark text color */
+    }
+  </style>
+</head>
+<body class="hiragana-page">
+
+  <!-- Fixed-top Navbar -->
+  <nav class="navbar navbar-light bg-light fixed-top">
+    <div class="container">
+      <!-- Empty navbar content (no branding or links) -->
+    </div>
+  </nav>
+
+  <!-- Simple Header with Text "Hiragana" -->
+  <div class="header text-center py-5" style="background-color: #f8f9fa;">
+    <h1>Hiragana</h1>
+    <h2>ひらがな</h2>
+  </div>
+
+
+
+  <!-- Main Content Section -->
+  <div class="container">
+    <!-- Pills Navigation -->
+    <ul class="nav nav-pills mt-4">
+      <li class="nav-item">
+        <a class="nav-link" href="/hanasu">Home</a>
+      </li>
+      <!-- Lessons Dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Lessons
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="{% url 'lesson1' %}">Lesson 1</a></li>
+          <li><a class="dropdown-item" href="{% url 'lesson1' %}">Lesson 2</a></li>
+          <li><a class="dropdown-item" href="{% url 'lesson1' %}">Lesson 3</a></li>
+          <li><a class="dropdown-item" href="{% url 'lesson1' %}">Lesson 4</a></li>
+          <!-- Add more lessons as needed -->
+        </ul>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle active" aria-current="page" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Hiragana
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="{% url 'hiragana' %}">Hiragana Chart</a></li>
+          <li><a class="dropdown-item" href="{% url 'hiragana' %}">Hiragana Quiz</a></li>
+          <!-- Add more lessons as needed -->
+        </ul>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Katakana
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="{% url 'katakana' %}">Katakana Chart</a></li>
+          <li><a class="dropdown-item" href="{% url 'katakana' %}">Katakana Quiz</a></li>
+          <!-- Add more lessons as needed -->
+        </ul>
+      </li>
+    </ul>
+
+
+
+
+    <!-- Page Content -->
+    <h2>Hiragana</h2>
+
+    <p>
+      Here you can study Hiragana!
+    </p>
+
+
+<form method="post">
+    {% csrf_token %}
+    <div class="question-container">
+        <h2>Question {{ question_number }}:</h2>
+        <p class="question-text">{{ question.question_text }}</p>
+
+        {% if error_message %}
+            <p style="color: red;">{{ error_message }}</p>
+        {% endif %}
+        
+        <div class="answer-container">
+            <label for="user_answer" class="answer-label">Your Answer:</label>
+            <input type="text" name="user_answer" id="user_answer" required class="answer-input">
+		<button type="submit">Submit</button>
+        </div>
+    </div>
+   
+</form>
+<script>
+    // Automatically focus on the input field when the page loads
+    document.getElementById('user_answer').focus();
+</script>
+
+    <script>
+        // Save the scroll position just before the form is submitted
+        window.addEventListener('beforeunload', function() {
+            sessionStorage.setItem('scrollPosition', window.scrollY); // Store scroll position
+        });
+
+        // Restore the scroll position immediately after the page reloads
+        window.addEventListener('load', function() {
+            const storedPosition = sessionStorage.getItem('scrollPosition');
+            if (storedPosition) {
+                // Directly jump to the previous scroll position
+                window.scrollTo(0, parseInt(storedPosition));
+            }
+        });
+    </script>
+  
+<!-- Bootstrap JS (needed for dropdown functionality) -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

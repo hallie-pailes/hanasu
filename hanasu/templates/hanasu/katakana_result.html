@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <h1>Katakana</h1>
+    <h2>カタカナ</h2>
+{% endblock %}
+
+{% block content %}
+    <!-- Page Content -->
+    <br>
+    <h2>Katakana</h2>
+
+    <p>
+      Here you can study Katakana!
+    </p>
+
+<h1>Quiz Completed</h1>
+<p>Your Score: {{ score }} out of {{ total_questions }}</p>
+<a href="{% url 'katakana_quiz' %}">Retry Quiz</a>
+{% endblock %}
