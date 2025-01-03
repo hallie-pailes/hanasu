@@ -55,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', # Added for Render 
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -138,6 +139,7 @@ STATICFILES_DIRS = [
 #STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_ROOT = '/opt/render/project/src/static'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' # Added for Render
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
