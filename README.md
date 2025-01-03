@@ -9,7 +9,7 @@ Hanasu is an interactive web platform designed to help users learn the Japanese 
 # Technologies Used
 - Django: The backend framework powering the application, used for managing user data and quizzes.
 - SQLite: The default database used to store quiz questions and user progress.
-- HTML, CSS, JavaScript: Used for the frontend to display content.
+- HTML & CSS: Used for the frontend to display content.
 - WhiteNoise: Used for serving static files efficiently in the production environment (Render).
 
 # Deployment
