@@ -70,17 +70,4 @@
  </div>
 <br>
 
-<h2>Quiz Results</h2>
-
-{% for progress in progress_data %}
-    <div class="quiz-progress">
-        <h3>{{ progress.quiz_name }}</h3>
-        <p>Score: {{ progress.score }} / {{ progress.total_questions }}</p>
-        <p>Completion: {{ progress.completion_percentage|floatformat:2 }}%</p> <!-- Optional: to format to two decimal places -->
-        <p>Status: {% if progress.completed %} Completed {% else %} In Progress {% endif %}</p>
-    </div>
-{% empty %}
-    <p>No progress data available.</p>  <!-- Display this if there's no progress data -->
-{% endfor %}
-
 {% endblock %}
