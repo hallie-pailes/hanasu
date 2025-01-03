@@ -1,6 +1,9 @@
 # Hanasu - A Japanese Language Learning Website
 Hanasu is an interactive web platform designed to help users learn the Japanese language through study material and quizzes that follow along with the Genki: An Integrated Course in Elementary Japanese textbooks (2nd Edition) workbook exercises. The website provides quizzes for practicing hiragana and katakana characters, along with quizzes for the material from the lessons found in the Genki textbook, which enables learners to test their knowledge in a structured and fun way.
 
+# Live Demo
+Check out the live version of the project here: [Hanasu Japanese Language Learning Website](https://hanasu.onrender.com)
+
 # Features
 - Hiragana and Katakana Quizzes: Practice your Japanese alphabet skills with quizzes on all the characters.
 - Interactive Exercises: Workbook-style exercises to enhance your learning experience.
@@ -14,4 +17,3 @@ Hanasu is an interactive web platform designed to help users learn the Japanese 
 
 # Deployment
 - The project is deployed on Render, making it available online. All static files (like styles and images) are served through WhiteNoise.
-
